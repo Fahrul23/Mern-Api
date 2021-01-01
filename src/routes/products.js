@@ -10,7 +10,7 @@ router.post('/product', productsController.createProduct);
 
 // READ PRODUCTS
 
-router.get('/product', productsController.getAllProducts);
+router.get('/products', productsController.getAllProducts);
 
 
 
