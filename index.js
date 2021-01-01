@@ -3,7 +3,7 @@ const app = express();
 
 const producRoutes = require('./src/routes/products');
 
-app.use('/',producRoutes);
+app.use('/v1/customer',producRoutes);
 
 
 

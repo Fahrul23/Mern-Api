@@ -6,7 +6,7 @@ const productsController= require('../controllers/products');
 
 // CREATE PRODUCTS 
 
-router.post('/produc', productsController.createProduct);
+router.post('/product', productsController.createProduct);
 
 // READ PRODUCTS
 
