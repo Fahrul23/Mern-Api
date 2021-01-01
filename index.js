@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json()); //Type JSON
 
-const producRoutes = require('./src/routes/products');
 const authRoutes = require('./src/routes/auth');
+const blogRoutes = require('./src/routes/blog');
 
 app.use((req,res,next) =>{
     res.setHeader('Access-Control-Allow-Origin','*');
@@ -16,11 +16,9 @@ app.use((req,res,next) =>{
     
 });
 
-app.use('/v1/customer',producRoutes);
 app.use('/v1/auth',authRoutes)
+app.use('/v1/blog',blogRoutes);
 
-
-app.use('/v1/customer',producRoutes);
 
 
 
