@@ -14,6 +14,8 @@ exports.createBlogPost = (req,res,next)=>{
         throw err;
     }
 
+    
+
 
     const result ={
         message : 'Create Blog Post Success',
