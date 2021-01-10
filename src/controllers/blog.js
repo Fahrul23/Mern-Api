@@ -82,6 +82,7 @@ exports.getBlogPostById = (req,res,next)=>{
     })
 }
 
+
 exports.updateBlogPost = (req,res,next) =>{
  
     const errors = validationResult(req);
