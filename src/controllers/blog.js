@@ -95,6 +95,7 @@ exports.updateBlogPost = (req,res,next) =>{
         err.errorStatus = 422;
         throw err;
     }
+    
 
     const title = req.body.title;
     const image = req.file.path;
