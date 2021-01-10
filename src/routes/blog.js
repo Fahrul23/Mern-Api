@@ -15,5 +15,7 @@ router.put('/post/:postId',[
     body('title').isLength({min:5}).withMessage('Input title tidak valid'),
     body('body').isLength({min:5}).withMessage('Input body tidak valid')],
     blogController.updateBlogPost);
+
+router.delete('/post/:postId',blogController.deleteBlogPost);
     
 module.exports = router;
