@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 app.use(bodyParser.json()); //Type JSON
 
@@ -23,12 +24,17 @@ app.use((error,req,res,next) =>{
     const status = error.errorStatus || 500;
     const message = error.message;
     const data = error.data;
-    res.status(status).json({
-        message:message,
-        data:data
-    });
+    res.status(status).json({message:message,data:data});
+});
+
+const url = 'mongodb://localhost/blog';
+mongoose.connect(url,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
 })
+.then(()=>{
+    app.listen(4000, () => console.log('Connection Succes'));
+})
+.catch(err => console.log(err));
 
 
-
-app.listen(4000);
