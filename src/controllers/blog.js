@@ -46,3 +46,35 @@ exports.createBlogPost = (req,res,next)=>{
     
     
 }
+
+exports.getAllBlogPost =  (req,res,next) =>{
+    BlogPost.find()
+    .then(result => {
+        res.status(200).json({
+            message: 'Data Blog Post Berhasil dipanggil',
+            data: result
+        });
+    })
+    .catch(err =>{
+        next(err);
+    })
+}
+
+exports.getBlogPostById = (req,res,next)=>{
+    const postId =req.params.postId
+    BlogPost.findById(postId)
+    .then(result =>{
+        if(!result){
+            const error = new Error('Blog Post tidak ditemukan');
+            error.errorStatus = 404;
+            throw error;
+        }
+        res.status(200).json({
+            message: 'Data Blog Post Berhasil Di panggil',
+            data: result,
+        })
+    })
+    .catch(err =>{
+        next(err);
+    })
+}
