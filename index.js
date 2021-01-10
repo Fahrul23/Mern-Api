@@ -31,6 +31,7 @@ mongoose.connect('mongodb://localhost/blog',{
     useNewUrlParser: true,
     useUnifiedTopology: true 
 })
+
 .then(()=>{
     app.listen(4000, () => console.log('Connection Succes'));
 })
