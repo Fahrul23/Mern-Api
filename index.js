@@ -27,8 +27,7 @@ app.use((error,req,res,next) =>{
     res.status(status).json({message:message,data:data});
 });
 
-const url = 'mongodb://localhost/blog';
-mongoose.connect(url,{
+mongoose.connect('mongodb://localhost/blog',{
     useNewUrlParser: true,
     useUnifiedTopology: true 
 })
