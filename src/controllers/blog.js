@@ -60,6 +60,7 @@ exports.getAllBlogPost =  (req,res,next) =>{
     })
 }
 
+
 exports.getBlogPostById = (req,res,next)=>{
     const postId =req.params.postId
     BlogPost.findById(postId)
