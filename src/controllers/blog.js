@@ -62,6 +62,7 @@ exports.getAllBlogPost =  (req,res,next) =>{
     })
 }
 
+
 exports.getBlogPostById = (req,res,next)=>{
     const postId =req.params.postId
     BlogPost.findById(postId)
@@ -96,6 +97,7 @@ exports.updateBlogPost = (req,res,next) =>{
         err.errorStatus = 422;
         throw err;
     }
+    
 
     const title = req.body.title;
     const image = req.file.path;

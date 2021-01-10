@@ -12,5 +12,6 @@ exports.register= (req,res,next)=>{
             password:password
         }
     }
+    
     res.status(201).json(result)
 }

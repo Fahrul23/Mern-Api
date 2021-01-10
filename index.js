@@ -31,6 +31,7 @@ const fileFilter= (req,file,cb) =>{
     }
 }
 
+
 app.use(bodyParser.json());
 app.use('/images', express.static(path.join(__dirname,'images')))
 app.use(multer({storage:fileStorage, fileFilter:fileFilter}).single('image'))
@@ -40,6 +41,8 @@ app.use((req,res,next) =>{
     res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers','Content-Type,Authorization');
     next();
+    
+    
 });
 
 app.use('/v1/auth',authRoutes)
@@ -56,6 +59,7 @@ mongoose.connect('mongodb://localhost/blog',{
     useNewUrlParser: true,
     useUnifiedTopology: true 
 })
+
 .then(()=>{
     app.listen(4000, () => console.log('Connection Succes'));
 })
